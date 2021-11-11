@@ -12,7 +12,8 @@ CREATE TABLE IF NOT EXISTS poke1 (
     legendary  boolean DEFAULT FALSE
 );
 
-CREATE TABLE IF NOT EXISTS peleas_pokemones (
+CREATE TABLE IF NOT EXISTS pokemon_showdowns (
+    id         serial PRIMARY KEY,
     winner_id  integer REFERENCES poke1(id),
     winner_hp  integer,
     looser_id  integer REFERENCES poke1(id),

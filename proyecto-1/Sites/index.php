@@ -58,28 +58,35 @@
       <div class="tile is-parent">
         <div class="tile is-child box">
           <h2 class="title">Procedimiento almacenado: Pelea Pokemon</h2>
-          <form action='./queries/X.php' method='GET'>
+          <?php
+          // Hay que obtener los pokemones a elegir
+          $query = $DB1->query('SELECT id, name FROM poke1;');
+          $pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
+          ?>
+          <form action='./consultas/crear_pelea_pokemon.php' method='POST'>
             <div class="field is-grouped is-grouped-multiline">
               <div class="control">
-                <label class="label" for="pokemon-1">Pokemon 1</label>
+                <label class="label" for="pid1">Pokemon 1</label>
                 <div class="select">
-                  <select name="pokemon-1">
-                    <option>Select dropdown</option>
-                    <option>With options</option>
+                  <select name="pid1">
+                    <?php foreach ($pokemones as $pokemon) { ?>
+                      <option value="<?php echo $pokemon['id'] ?>"><?php echo $pokemon['name'] ?></option>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
               <div class="control">
-                <label class="label" for="pokemon-1">Pokemon 2</label>
+                <label class="label" for="pid2">Pokemon 2</label>
                 <div class="select">
-                  <select name="pokemon-1">
-                    <option>Select dropdown</option>
-                    <option>With options</option>
+                  <select name="pid2">
+                    <?php foreach ($pokemones as $pokemon) { ?>
+                      <option value="<?php echo $pokemon['id'] ?>"><?php echo $pokemon['name'] ?></option>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
             </div>
-            <input class='button is-primary' type='submit' value='Consultar'>
+            <input class='button is-primary' type='submit' value='Crear'>
           </form>
         </div>
       </div>
