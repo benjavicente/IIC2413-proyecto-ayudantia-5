@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION
 -- declaramos la función y sus argumentos
 verificar_pokemon (pname varchar(100), ptype varchar(10), total int, hp int, attack int, defense int, sp_atk int, sp_def int, speed int, legendary boolean, generation int)
 
--- declaramos lo que retorna 
+-- declaramos lo que retorna
 RETURNS BOOLEAN AS $$
 
 
@@ -36,7 +36,7 @@ BEGIN
     -- insertamos el dato
     insert into pokemon values(idmax + 1, pname, ptype, total, hp, attack, defense, sp_atk, sp_def, speed, legendary, generation);
     RETURN TRUE;
-    
+
 
 
 

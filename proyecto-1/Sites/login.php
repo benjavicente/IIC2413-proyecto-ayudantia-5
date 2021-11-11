@@ -39,5 +39,5 @@ if ($request_method  === 'POST') {
       </div>
     </div>
   </section>
-  <?php include './templates/footer.php'; ?>
-<?php } ?>
+<?php include './templates/footer.php';
+} ?>

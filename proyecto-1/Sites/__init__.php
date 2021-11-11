@@ -14,6 +14,10 @@ session_start();
 
 
 // Funciones propias de utilidad
+
+/**
+ * Volver al inicio, tiene que se llamada antes de entregar HTML
+ */
 function go_home() {
   header("Location: " . '/~grupo157/');
   exit();

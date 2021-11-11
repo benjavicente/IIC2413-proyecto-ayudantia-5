@@ -44,7 +44,6 @@ BEGIN
   END LOOP;
 
   -- Una vez terminada la pelea, se ve el ganador
-  -- TODO: insertar registro en una tabla
   attacks := current_turn - 1;
   IF pokemon1_current_hp > 0 THEN
     w_name := pokemon1.name;
