@@ -4,3 +4,24 @@
         url("https://fondosmil.com/fondo/14762.jpg");
     background-position: 5% 55%;
 }
+
+:root{
+  --nav-bar-height: 3.25rem;
+  --footer-height: 8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  :root {
+    --nav-bar-height: 3.25rem;
+  }
+}
+
+
+.footer {
+  height: var(--footer-height);
+  padding: 3rem 1.5rem 4rem;
+}
+
+.cover-all {
+  height: calc(100vh - var(--footer-height) - var(--nav-bar-height));
+}
