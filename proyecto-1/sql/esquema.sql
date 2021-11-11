@@ -1,21 +1,22 @@
-CREATE TABLE IF NOT EXISTS pokemones (
+CREATE TABLE IF NOT EXISTS poke1 (
     id         serial PRIMARY KEY,
-    name       varchar(50) NOT NULL,
-    type       varchar(15),
+    name       varchar(100) NOT NULL,
+    type_1     varchar(15),
     total      integer,
     hp         integer,
     attack     integer,
-    defense    integer
+    defense    integer,
     sp_atack   integer,
     sp_defense integer,
     speed      integer,
     legendary  boolean DEFAULT FALSE
-)
+);
 
-CRATE TABLE IF NOT EXISTS peleas_pokemones (
-    winner_id  integer REFERENCES pokemones(id),
+CREATE TABLE IF NOT EXISTS peleas_pokemones (
+    winner_id  integer REFERENCES poke1(id),
     winner_hp  integer,
-    looser_id  integer REFERENCES pokemones(id),
+    looser_id  integer REFERENCES poke1(id),
     looser_hp  integer,
+    number_of_atacks integer,
     created_at timestamp DEFAULT CURRENT_TIMESTAMP
 )

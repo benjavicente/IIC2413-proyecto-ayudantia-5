@@ -35,6 +35,9 @@
         <a class="navbar-item" href="<?php echo $base_path . '/#top'?>">
           Inicio
         </a>
+        <a class="navbar-item" href="<?php echo $base_path . '/consultas/pokemones.php'?>">
+          Pokemones
+        </a>
         <a class="navbar-item" href="https://github.com/IIC2413/Syllabus-2021-2/issues">
           Foro
         </a>
@@ -51,7 +54,7 @@
             </form>
           <?php } else { ?>
             <div class="buttons">
-              <a class="button is-primary">
+              <a disabled class="button is-primary" title="Esto no está implementado aquí!">
                 Registrarse
               </a>
               <a href="<?php echo $base_path . '/login' ?>" class="button is-light">
