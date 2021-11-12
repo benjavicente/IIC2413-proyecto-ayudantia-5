@@ -1,4 +1,10 @@
-<?php require_once("./__init__.php") ?>
+<?php
+require_once("./__init__.php");
+
+// Hay que obtener los pokemones a elegir
+$query = $DB1->query('SELECT id, name FROM poke1;');
+$pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <?php include('./templates/header.php'); ?>
 
@@ -49,20 +55,7 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent">
         <div class="tile is-child box">
-          <h2 class="title">Procedimiento almacenado: XX</h2>
-          <form action='./queries/bdd1.php' method='GET'>
-            <input class='button is-primary' type='submit' value='Consultar'>
-          </form>
-        </div>
-      </div>
-      <div class="tile is-parent">
-        <div class="tile is-child box">
           <h2 class="title">Procedimiento almacenado: Pelea Pokemon</h2>
-          <?php
-          // Hay que obtener los pokemones a elegir
-          $query = $DB1->query('SELECT id, name FROM poke1;');
-          $pokemones = $query->fetchAll(PDO::FETCH_ASSOC);
-          ?>
           <form action='./consultas/crear_pelea_pokemon.php' method='POST'>
             <div class="field is-grouped is-grouped-multiline">
               <div class="control">

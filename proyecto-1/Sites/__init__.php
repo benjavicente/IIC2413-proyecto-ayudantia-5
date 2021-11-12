@@ -27,7 +27,7 @@ function go_home() {
  * Ejemplo de componentes, donde uno llama a la función y se genera HTML
  * NOTA: Aunque esto esta funcional, el nombre de las columnas es el mismo
  *       que en la BDD, se podria modificar para poder elegir que nombre mostrar.
- *       [Ver DOStatement::fetch - https://www.php.net/manual/es/pdostatement.fetch.php]
+ *       [[Ver PDOStatement::fetch](https://www.php.net/manual/es/pdostatement.fetch.php)]
  *
  * @param PDOStatement $query
 */

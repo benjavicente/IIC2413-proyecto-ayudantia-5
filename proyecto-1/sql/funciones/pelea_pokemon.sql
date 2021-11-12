@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION new_pokemon_showdowns
+CREATE OR REPLACE FUNCTION new_pokemon_showdown
   (p1_id integer, p2_id integer, OUT w_name varchar, OUT attacks integer)
   -- Arriba se espesificó que se entrega w_name como OUTput
   LANGUAGE plpgsql AS $$
@@ -44,7 +44,7 @@ BEGIN
   END LOOP;
 
   -- Una vez terminada la pelea, se ve el ganador
-  attacks := current_turn - 1;
+  attacks := current_turn;
   IF pokemon1_current_hp > 0 THEN
     w_name := pokemon1.name;
     -- Se crea el registro
@@ -55,6 +55,7 @@ BEGIN
     );
   ELSE
     w_name := pokemon2.name;
+    -- Se crea el registro
     INSERT INTO pokemon_showdowns (
       winner_id, winner_hp, looser_id, looser_hp, number_of_atacks
     ) VALUES (
