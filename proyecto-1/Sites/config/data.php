@@ -1,9 +1,7 @@
 <?php
 
-$user1 = 'grupo157';
-$password1 = 'grupo157';
-$databaseName1 = 'grupo157e3';
+// Esto lo pueden editar localmente si corren php en su computador
 
-$user2 = 'grupo158';
-$password2 = 'grupo158';
-$databaseName2 = 'grupo158e3';
+$user = 'grupoXXX';
+$password = 'grupoXXX';
+$databaseName = 'grupoXXXe3';

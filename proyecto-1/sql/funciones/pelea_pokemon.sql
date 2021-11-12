@@ -1,6 +1,7 @@
 CREATE OR REPLACE FUNCTION new_pokemon_showdown
   (p1_id integer, p2_id integer, OUT w_name varchar, OUT attacks integer)
   -- Arriba se espesificó que se entrega w_name como OUTput
+  -- Esto permite retornar output en formato de tabla
   LANGUAGE plpgsql AS $$
 DECLARE
   pokemon1 RECORD;

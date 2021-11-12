@@ -12,5 +12,6 @@
 </head>
 
 <body>
+  <!-- Aquí se puede añadir contenido de utilidad para la página -->
   <!-- Ver https://bulma.io/documentation/components/navbar/ -->
 

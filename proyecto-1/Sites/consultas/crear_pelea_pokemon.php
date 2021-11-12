@@ -1,7 +1,8 @@
 <?php
 require_once '../__init__.php';
 
-$statement = $DB1->prepare("SELECT * FROM new_pokemon_showdowns(:id1, :id2);");
+// Consulta preparada - https://www.php.net/manual/es/pdo.prepared-statements.php
+$statement = $DB->prepare("SELECT * FROM new_pokemon_showdowns(:id1, :id2);");
 $statement->execute(array('id1' => $_POST['pid1'], 'id2' => $_POST['pid2']));
 $fight_result = $statement->fetch(PDO::FETCH_ASSOC);
 ?>

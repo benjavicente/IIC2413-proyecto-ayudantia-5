@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION
 -- declaramos la función y sus argumentos
 función (argumentos)
 
--- declaramos lo que retorna 
+-- declaramos lo que retorna
 RETURNS tipo de dato AS $$
 
 -- declaramos las variables a utilizar si es que es necesario
@@ -17,7 +17,7 @@ BEGIN
     -- control de flujo
     IF condicion THEN
         pasa algo
-    
+
     ELSE
         pasa otra cosa
 

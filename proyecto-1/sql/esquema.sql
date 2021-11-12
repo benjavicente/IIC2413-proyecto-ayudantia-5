@@ -1,3 +1,6 @@
+-- Este es el esquema que utiliza el proyecto de ejemplo
+-- No lo incluyas en tu proyecto!
+
 CREATE TABLE IF NOT EXISTS poke1 (
     id         serial PRIMARY KEY,
     name       varchar(100) NOT NULL,

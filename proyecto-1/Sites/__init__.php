@@ -2,6 +2,7 @@
 
 // Este archivo se puede importar en cada archivo .php, y se puede tener
 // aquí todo lo necesario para no tener que agregarlo para cada archivo.
+// No tiene nada de mágico, es un archivo php cualquiera con un nombre arbitrario.
 
 // Cargamos los datos para poder iniciar la BDD
 require_once __DIR__ . "/config/data.php";
@@ -16,7 +17,7 @@ session_start();
 // Funciones propias de utilidad
 
 /**
- * Volver al inicio, tiene que se llamada antes de entregar HTML
+ * Volver al inicio, tiene que se llamada antes de entregar HTML.
  */
 function go_home() {
   header("Location: " . '/~grupo157/');
@@ -36,12 +37,16 @@ function table_from_query($query) { ?>
     <table class="table">
       <thead>
         <tr>
+          <!-- Por cada columna, muestra el nombre -->
           <? foreach (range(0, $query->columnCount() - 1) as $col_index) { ?>
             <th><?php echo htmlentities($query->getColumnMeta($col_index)['name']) ?></th>
           <?php } ?>
         </tr>
       </thead>
       <tbody>
+        <!-- Mostrar una celda por cada valor de cada resultado -->
+        <!-- hmtlentities se utiliza para evitar XXS, vulnerabilidad que no se pasa en este ramo -->
+        <!-- https://es.wikipedia.org/wiki/Cross-site_scripting => insertar código HTML peligroso en sitios que lo permitan -->
         <?php while ($row = $query->fetch(PDO::FETCH_ASSOC)) { ?>
           <tr>
             <?php foreach ($row as $value) { ?>
